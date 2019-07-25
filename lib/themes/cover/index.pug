@@ -144,16 +144,22 @@ html(lang="en")
 							h1.cover-heading Everything is awesome!
 							p.lead.
 								All the tests passed and you're the best.
-							div.asserts
+							div.suites
 								each pkg in testRun.packages
 									each suite in pkg.suites
-										each testCase in suite.cases
 											div.row
-												if testCase.isFailure
-													div.col-md-offset-2.col-md-1.status.failure &#10005;
-												else
-													div.col-md-offset-2.col-md-1.status.success &#10005;
-												div.col-md-9.name= testCase.message
+												div.info.success
+													div.col-md-3.col-md-offset-1.overf= suite.pkgName
+													div.col-md-1 -
+													div.col-md-7.overf= suite.name
+												div.asserts
+													each testCase in suite.cases
+														div.row
+															if testCase.isFailure
+																div.col-md-offset-2.col-md-1.status.failure &#10005;
+															else
+																div.col-md-offset-2.col-md-1.status.success &#10003;
+															div.col-md-9.name= testCase.message
 					else
 						div.inner.cover.failure
 							h1.status &#10005;
