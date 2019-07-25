@@ -7,6 +7,15 @@ body{
   color: #FFF;
 }
 
+a,
+a:visited {
+  color: whitesmoke;
+}
+
+a:hover {
+  color: #FFF;
+}
+
 h2{
   font-size: 1.2em;
   margin: 0;
